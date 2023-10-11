@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 8</title>
+  </head>
+  <body class="bg-black text-white grid gap-5 px-3">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <h2>
+      8. Realice el algoritmo para calcular e informar el perímetro y el área
+      del círculo. Se considerará para este ejercicio que el valor de PI será
+      3.1416.
+    </h2>
+    <section class="mt-10 grid gap-4">
+      <form id="formularioCirculo" class="w-1/2 grid gap-4">
+        <label for="radio">Radio del círculo:</label>
+        <input type="number" id="radio" class="text-black" required /><br />
+        <button type="button" onclick="calcularPerimetroYArea()" class="bg-blue-400">
+          Calcular Perímetro y Área
+        </button>
+      </form>
+      <p id="resultado"></p>
+    </section>
+
+    <script>
+      function calcularPerimetroYArea() {
+        var radio = parseFloat(document.getElementById('radio').value);
+
+        if (!isNaN(radio) && radio > 0) {
+          var pi = 3.1416;
+
+          var circunferencia = 2 * pi * radio;
+
+          var area = pi * Math.pow(radio, 2);
+
+          document.getElementById('resultado').textContent =
+            'Circunferencia o "perimetro" del círculo: ' +
+            circunferencia.toFixed(2) +
+            '\nÁrea del círculo: ' +
+            area.toFixed(2);
+        } else {
+          document.getElementById('resultado').textContent =
+            'Por favor, ingresa un radio válido (mayor que cero).';
+        }
+      }
+    </script>
+  </body>
+</html>

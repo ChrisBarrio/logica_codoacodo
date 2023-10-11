@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 3</title>
+  </head>
+  <body class="bg-black text-white grid gap-5 px-3">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <h2>
+      3. Realice el algoritmo para calcular e informar el perímetro del
+      triángulo.
+    </h2>
+    <section class="mt-10 grid gap-4">
+      <img
+        src="https://arc-anglerfish-arc2-prod-abccolor.s3.amazonaws.com/public/QB2S2AYE5ZBLXNCEIJ6AJO3MM4.jpg"
+        alt="triangulo"
+        class="w-1/4"
+      />
+      <form id="formularioTriangulo" class="grid gap-3 w-1/2 text-black">
+        <label for="ladoA" class="text-white">Lado a:</label>
+        <input type="number" id="ladoA" required /><br />
+        <label for="ladoB" class="text-white">Lado b:</label>
+        <input type="number" id="ladoB" required /><br />
+        <label for="ladoC" class="text-white">Lado c:</label>
+        <input type="number" id="ladoC" required /><br />
+        <button type="button" onclick="calcularPerimetro()" class="bg-blue-400">
+          Calcular Perímetro
+        </button>
+      </form>
+
+      <p id="resultado" class="text-2xl text-white my-3 px-3"></p>
+    </section>
+
+    <script>
+      function calcularPerimetro() {
+        var ladoA = parseFloat(document.getElementById('ladoA').value);
+        var ladoB = parseFloat(document.getElementById('ladoB').value);
+        var ladoC = parseFloat(document.getElementById('ladoC').value);
+
+        if (
+          !isNaN(ladoA) &&
+          !isNaN(ladoB) &&
+          !isNaN(ladoC) &&
+          ladoA > 0 &&
+          ladoB > 0 &&
+          ladoC > 0
+        ) {
+          var perimetro = ladoA + ladoB + ladoC;
+
+          document.getElementById('resultado').textContent =
+            'El perímetro del triángulo es: ' + perimetro;
+        } else {
+          document.getElementById('resultado').textContent =
+            'Por favor, ingresa longitudes de lados válidas (mayores que cero).';
+        }
+      }
+    </script>
+  </body>
+</html>

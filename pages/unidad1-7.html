@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 7</title>
+  </head>
+  <body class="bg-black text-white grid gap-5 px-3">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <h2>
+      7. Realice el algoritmo que arme y muestre el mensaje "Bienvenido",
+      seguido del nombre y apellido del usuario.
+    </h2>
+    <section class="mt-10 grid gap-4"></section>
+
+    <script>
+      var nombre = prompt('Por favor, ingresa tu nombre:');
+      var apellido = prompt('Por favor, ingresa tu apellido:');
+
+      var mensaje = 'Bienvenido, ' + nombre + ' ' + apellido + '!';
+
+      alert(mensaje);
+    </script>
+  </body>
+</html>

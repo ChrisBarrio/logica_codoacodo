@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 6</title>
+  </head>
+  <body class="bg-black text-white grid gap-5 px-3">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <h2>
+      6. Realice el algoritmo para calcular e informar el resto de la división entera entre los valores.    </h2>
+    <section class="mt-10 grid gap-4">
+      
+      <form id="formularioDivision" class="w-1/2 grid gap-4">
+        <label for="numero1">Número 1:</label>
+        <input type="number" id="numero1" class="text-black" required><br>
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" class="text-black" required><br>
+        <button type="button" onclick="calcularResto()" class="bg-blue-400">Calcular Resto</button>
+    </form>
+
+      <p id="resultado" class="text-2xl text-white my-3 px-3"></p>
+    </section>
+
+    <script>
+      function calcularResto() {
+        var numero1 = parseInt(document.getElementById("numero1").value);
+        var numero2 = parseInt(document.getElementById("numero2").value);
+
+        // Verificar si los números son enteros válidos
+        if (!isNaN(numero1) && !isNaN(numero2)) {
+            var resto = numero1 % numero2;
+
+            document.getElementById("resultado").textContent = "El resto de la división entre " + numero1 + " y " + numero2 + " es: " + resto;
+        } else {
+            document.getElementById("resultado").textContent = "Por favor, ingresa números enteros válidos.";
+        }
+    }
+    </script>
+  </body>
+</html>

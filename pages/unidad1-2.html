@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 2</title>
+  </head>
+  <body class="bg-black text-white grid gap-5 px-3">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <h2>Ingresa las notas de los trimestres</h2>
+    <section class="mt-10">
+      <form id="formularioNotas" class="grid gap-2 px-3 w-1/4 text-black">
+        <label for="nota1" class="text-white">T1:</label>
+        <input type="number" id="nota1" required min="0" max="10"><br>
+        <label for="nota2" class="text-white">T2:</label>
+        <input type="number" id="nota2" required min="0" max="10"><br>
+        <label for="nota3" class="text-white">T3:</label>
+        <input type="number" id="nota3" required min="0" max="10"><br>
+        <button type="button" onclick="calcularPromedio()" class="bg-blue-600">Calcular Promedio</button>
+    </form>
+    <p id="resultado" class="text-2xl text-white my-3 px-3"></p>
+    </section>
+
+
+    <script>
+      function calcularPromedio() {
+          var nota1 = parseFloat(document.getElementById("nota1").value);
+          var nota2 = parseFloat(document.getElementById("nota2").value);
+          var nota3 = parseFloat(document.getElementById("nota3").value);
+  
+          // verifica que sean numeros
+          if (!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3)) {
+              var promedio = (nota1 + nota2 + nota3) / 3;
+              if (promedio >= 7) {
+                document.getElementById("resultado").textContent = "El promedio de las notas es: " + promedio.toFixed(2)+ " estas aprobado! Felicitaciones 🎉😀";
+                
+              } else {
+                document.getElementById("resultado").textContent = "Lo lamento no fue suficiente 😔, tu nota es: " + promedio.toFixed(2);
+                
+              }
+          } else {
+              document.getElementById("resultado").textContent = "Por favor, ingresa un número. ";
+          }
+      }
+  </script>
+  </body>
+</html>

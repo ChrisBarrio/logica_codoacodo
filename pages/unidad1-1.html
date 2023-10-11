@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>ejercicio 1</title>
+  </head>
+  <body class="bg-black text-white grid gap-5">
+    <a href="/index.html" class="mt-10">⬅️ Volver</a>
+    <section class="mt-10 grid gap-4 px-4">
+      <h2>
+        1.Realice un algoritmo que muestre el nombre y apellido de un usuario
+      </h2>
+      <p>Datos del usuario:</p>
+      <p id="nombreApellido"></p>
+    </section>
+
+    <script>
+      var nombre = prompt('Por favor, ingresa tu nombre:');
+
+      if (nombre === null || nombre === '') {
+        nombre = 'Incognito';
+      }
+
+      var apellido = prompt('Por favor, ingresa tu apellido:');
+
+      if (apellido === null || apellido === '') {
+        apellido = 'Incognito';
+      }
+
+      var parrafo = document.getElementById('nombreApellido');
+
+      parrafo.innerHTML = 'Nombre: ' + nombre + '<br>Apellido: ' + apellido;
+    </script>
+  </body>
+</html>
